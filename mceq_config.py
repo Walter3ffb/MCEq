@@ -179,6 +179,10 @@ muon_helicity_dependence = True
 #: rare or exotic particles (mostly relevant for non-compact mode)
 assume_nucleon_interactions_for_exotics = True
 
+#: Minimum allowed flux in numpy solver.
+#: All values below are set to 0.
+p_min = 1e-250
+
 #: This is not used in the code as before, instead the low energy
 #: extension is compiled into the HDF backend files.
 low_energy_extension = {
