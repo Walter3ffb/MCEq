@@ -29,11 +29,14 @@ def solv_numpy(nsteps, dX, rho_inv, int_m, dec_m, phi, grid_idcs):
 
     dXaccum = 0.
 
+    p_min = config.p_min
+
     from time import time
     start = time()
 
     for step in range(nsteps):
         phc += (imc.dot(phc) + dmc.dot(ric[step] * phc)) * dxc[step]
+        phc[phc < p_min] = 0.
 
         dXaccum += dxc[step]
 
